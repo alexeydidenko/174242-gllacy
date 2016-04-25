@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="main-header">
       <div class="container">
         <div>
-        	<img src="http://placehold.it" width="60" height="30" alt="logo">
+        	<img src="img/logo-gllacy.svg" width="154" height="64" alt="glaccy">
         </div>
         <nav class="main-navigation">
           <ul class="site-block">
@@ -105,7 +106,7 @@
         <div class="gallery">
           <section class="item">
             <div class="item-image">
-              <a href="#"><img src="http://placehold.it" width="150" height="150" alt="ice-cream"></a>
+              <a href="#"><img src="img/item-1.jpg" width="267" height="267" alt="ice-cream"></a>
             </div>
             <h2 class="item-title">
               <a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
@@ -115,7 +116,7 @@
           </section>
           <section class="item">
             <div class="item-image">
-              <a href="#"><img src="http://placehold.it" width="150" height="150" alt="ice-cream"></a>
+              <a href="#"><img src="img/item-2.jpg" width="267" height="267" alt="ice-cream"></a>
             </div>
             <h2 class="item-title">
               <a href="#">Сливочно-кофейное с кусочками шоколада</a>
@@ -125,7 +126,7 @@
           </section>
           <section class="item">
             <div class="item-image">
-              <a href="#"><img src="http://placehold.it" width="150" height="150" alt="ice-cream"></a>
+              <a href="#"><img src="img/item-3.jpg" width="267" height="267" alt="ice-cream"></a>
             </div>
             <h2 class="item-title">
               <a href="#">Сливочно-клубничное с присыпкой из белого шоколада</a>
@@ -135,7 +136,7 @@
           </section>
           <section class="item">
             <div class="item-image">
-              <a href="#"><img src="http://placehold.it" width="150" height="150" alt="ice-cream"></a>
+              <a href="#"><img src="img/item-4.jpg" width="267" height="267" alt="ice-cream"></a>
             </div>
             <h2 class="item-title">
               <a href="#">Сливочное крем-брюле с карамельной подливкой</a>
@@ -210,12 +211,23 @@
         </div>
         <div class="footer-copyright">
           <a href="#" class="footer-logo">
-            <img src="http://placehold.it" width="60" height="30" alt="logo">
+            <img src="img/logo-htmlacademy.svg" width="108" height="37" alt="htmlacademy">
           </a>
           <p>Сделано в <a href="#">HTML Academy</a> © 2016</p>
         </div>
       </div>
     </footer>
+    <div class="popup">
+      <h2 class="popup-title">Мы обязательно вам ответим!</h2><a href="#close" title="Закрыть"><span class="icon-close"></span></a>
+      <div class="popup-fields">
+        <form action="https://echo.htmlacademy.ru" method="post">
+          <input type="text" name="name" placeholder="Как вас зовут?">
+          <input type="email" name="email" placeholder="Ваша почта для ответа?">
+          <textarea name="review">Напишите что-нибудь...</textarea>
+          <input type="submit" value="Отправить">
+        </form>
+      </div>
+    </div>
   </body>
 </html>
 
