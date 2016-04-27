@@ -14,7 +14,49 @@ h1 {
   font-family: "Roboto Bold", Arial, serif;
 }
 
-.container {
-  width: 1146px;
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
+.container {
+  width: 1146px;
+  margin: 0 auto;
+  padding: 0 27px;
+  /*Для оформления сетки*/
+  border: 1px solid black;
+}
+
+.main-navigation {
+  float: left;
+  width: 853px;
+  /*Для оформления сетки*/
+  border: 1px solid red;
+}
+
+.main-navigation .logo {
+  /*Для оформления сетки*/
+  background-color: yellow;
+}
+
+.user-block {
+  float: right;
+  width: 267px;
+  /*Для оформления сетки*/
+  border: 1px solid red;
+}
+
+.info-block {
+  float: right;
+  /*Для оформления сетки*/
+  background-color: green;
+}
+
+.slider-backgrounds {
+  width: 3438px;
+}
+
+.slider-backgrounds div {
+  float: left;
+}
