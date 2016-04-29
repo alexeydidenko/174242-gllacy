@@ -1,9 +1,13 @@
 body {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
   font-size: 16px;
   line-height: 22px;
   color: #ffffff;
   font-weight: normal;
   font-family: "Roboto Regular", Arial, serif;
+  background-color: #849d8f;
 }
 
 h1 {
@@ -24,68 +28,156 @@ h1 {
   width: 1146px;
   margin: 0 auto;
   padding: 0 27px;
-  /*Для оформления сетки*/
-  background-color: pink;
 }
 
 .main-header {
-  width: 1200px;
-  margin: 0 auto;
-  padding-top: 22px;
   /*Временно для оформления сетки*/
   background-color: yellow;
 }
 
-.main-navigation {
-  float: left;
-  width: 853px;
-  /*Временно для оформления сетки*/
-  background-color: slategray;
+.main-header .container {
+  position: relative;
+  min-height: 90px;
 }
 
-.main-navigation .logo {
+.logo {
+  float: left;
   /*Временно для оформления сетки*/
   background-color: darkseagreen;
+}
+
+.main-navigation {
+  float: left;
+  /*Временно для оформления сетки*/
+  background-color: red;
+}
+
+.main-menu > li {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+.main-menu li:hover .sub-menu {
+  display: block;
+}
+
+.main-menu .sub-menu {
+  position: absolute;
+  left: -40px;
+  width: 143px;
+  display: none;
+  list-style: none;
 }
 
 .user-block {
   float: right;
-  width: 267px;
   /*Временно для оформления сетки*/
   background-color: darkseagreen;
 }
 
-.info-block {
-  float: right;
-  /*временно для оформления сетки*/
-  background-color: slategray;
+.user-block ul > li {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
 }
 
-.slider-backgrounds {
+.user-block li:hover .search-field {
+  display: block;
+}
+
+.user-block .search-field {
+  position: absolute;
+  left: -130px;
+  z-index: 10;
+  display: none;
+}
+
+.user-block li:hover .entrance {
+  display: block;
+}
+
+.user-block .entrance {
+  position: absolute;
+  left: -135px;
+  display: none;
+}
+
+.user-block li:hover .cart-container {
+   display: block;
+}
+
+.user-block .cart-container {
+  position: absolute;
+  left: -400px;
+  width: 484px;
+  display: none;
+  background-color: darkseagreen;
+  z-index: 10;
+}
+
+.info-block {
+  position: absolute;
+  right: 27px;
+  bottom: 0;
+}
+
+.slider-image {
   width: 3600px;
   font-size: 0;
 }
 
-.backgrounds {
+.slides {
   display: inline-block;
+  vertical-align: top;
   width: 1146px;
   min-height: 584px;
   font-size: 16px;
 }
 
-.background1 {
+.slide1 {
   margin-right: 27px;
   background: #849d8f url("../img/slider-1.png") center no-repeat;
 }
 
-.background2 {
+.slide2 {
   padding: 0 27px;
   background: #8996a6 url("../img/slider-2.png") center no-repeat;
 }
 
-.background3 {
+.slide3 {
   padding: 0 27px;
   background: #9d8b84 url("../img/slider-3.png") center no-repeat;
+}
+
+.breadcrumbs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: red;
+}
+
+.breadcrumbs > li {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.filter {
+  margin-bottom: 40px;
+}
+
+.filter form > div {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.filter form > div:last-child {
+  display: inline-block;
+  vertical-align: bottom;
+
+}
+.filter-name {
+  display: block;
 }
 
 .banners {
@@ -115,6 +207,10 @@ h1 {
   background-color: darkseagreen;
 }
 
+.gallery-catalog {
+  margin-bottom: 104px;
+}
+
 .item {
   display: inline-block;
   margin-right: 26px;
@@ -123,7 +219,7 @@ h1 {
   vertical-align: top;
 }
 
-.item:last-child {
+.item:nth-child(4n) {
   margin-right: 0px;
 }
 
@@ -132,7 +228,6 @@ h1 {
   padding: 28px 19px;
   /*Временно для оформления сетки*/
   background-color: darkseagreen;
-
 }
 
 .feature-left {
@@ -165,9 +260,13 @@ h1 {
   background-color: slategray;
 }
 
+.paginator {
+  /*Временно для оформления сетки*/
+  background-color: slategray;
+  text-align: right;
+}
+
 .map {
-  width: 1200px;
-  margin: 0 auto;
   background-color: darkseagreen;
 }
 
@@ -178,33 +277,34 @@ h1 {
 }
 
 .main-footer {
-  width: 1200px;
-  margin: 0 auto;
-  padding-top: 18px;
-  padding-bottom: 24px;
   /*Временно для оформления сетки*/
   background-color: yellow;
 }
 
+.catalog-footer {
+  margin-top: 30px;
+}
+
 .footer-social {
   float: left;
-  width: 267px;
-  margin-right: 26px;
   /*Временно для оформления сетки*/
   background-color: slategray;
 }
 
 .footer-information {
   float: left;
-  width: 560px;
-  margin-right: 26px;
   /*Временно для оформления сетки*/
   background-color: lightgreen;
 }
 
 .footer-copyright {
   float: right;
-  width: 267px;
   /*Временно для оформления сетки*/
   background-color: slategray;
 }
+
+.popup {
+  display: none;
+}
+
+

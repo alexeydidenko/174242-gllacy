@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <header>
-      <div class="container">
-        <nav class="main-navigation">
-          <div class="logo">
-            <a href="#"><img src="img/logo-gllacy.svg" width="154" height="64" alt="glaccy"></a>
+    <header class="main-header">
+      <div class="container clearfix">
+        <div class="logo">
+            <a href="index.html"><img src="img/logo-gllacy.svg" width="154" height="64" alt="glaccy"></a>
           </div>
-          <ul class="site-block">
+        <nav class="main-navigation">
+          <ul class="main-menu">
             <li>
               <a href="#" class="active">Каталог</a>
             </li>
@@ -40,14 +40,14 @@
                   <tr>
                     <td></td>
                     <td></td>
-                    <td><a href="#">Пломбир с апельсиновым джемом</a></td>
+                    <td>Пломбир с апельсиновым джемом</td>
                     <td>1,5 кг х 200 руб.</td>
                     <td>300 руб.</td>
                   </tr>
                   <tr>
                     <td></td>
                     <td></td>
-                    <td><a href="#">Клубничный пломбир с присыпкой из белого шоколада</a></td>
+                    <td>Клубничный пломбир с присыпкой из белого шоколада</td>
                     <td>1,5 кг х 300 руб.</td>
                     <td>450 руб.</td>
                   </tr>
@@ -58,35 +58,33 @@
           </ul>
         </div>
         <div class="info-block">
-          <p>
+          <span>
             С 10 до 20, ежедневно<br>
             <span>8 812 450-25-25</span>
-          </p>
+          </span>
         </div>
       </div>
     </header>
     <main>
       <div class="container">
-        <div class="breadcrumbs">
-          <a href="#">Главная</a>
-          <a href="#">Каталог</a>
-          <span class="active">Сливочное</span>
-        </div>
+        <ul class="breadcrumbs">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="#">Каталог</a></li>
+          <li class="active">Сливочное</li>
+        </ul>
         <h1>Сливочное мороженое</h1>
         <div class="filter">
           <form action="https://echo.htmlacademy.ru" method="get">
             <div class="sorting">
-              <span>Сортировка:</span>
-              <label>
-                <select>
-                  <option value="popular" selected>по популярности</option>
-                  <option value="cheap">сначала недорогие</option>
-                  <option value="expensive">сначала дорогие</option>
-                  <option value="fat-content">по жирности</option>
-                </select>
-              </label>
+              <label for="sort" class="filter-name">Сортировка:</label>
+              <select id="sort">
+                <option value="popular" selected>по популярности</opti>
+                <option value="cheap">сначала недорогие</option>
+                <option value="expensive">сначала дорогие</option>
+                <option value="fat-content">по жирности</option>
+              </select>
             </div>
-            <div class="range-filter">
+            <div class="price-range">
               <div class="price-controls">
                 Цена: <input class="min-price" type="text" value="100">руб.
                 - <input class="max-price" type="text" value="500">руб.
@@ -98,7 +96,7 @@
               </div>
             </div>
             <div class="fat-content">
-              <span>Жирность:</span>
+              <span class="filter-name">Жирность:</span>
               <label>
                 <input type="radio" name="fat-content" value="0%">0%
               </label>
@@ -113,7 +111,7 @@
               </label>
             </div>
             <div class="sweet-content">
-              <span>Наполнители:</span>
+              <span class="filter-name">Наполнители:</span>
               <label>
                 <input type="checkbox" name="chocolate" checked>шоколадные
               </label>
@@ -130,10 +128,12 @@
                 <input type="checkbox" name="jam">джемы
               </label>
             </div>
-            <input type="submit" name="make-filter" value="Применить">
+            <div class="filter-submit">
+              <input type="submit" name="make-filter" value="Применить">
+            </div>
           </form>
         </div>
-        <div class="gallery">
+        <div class="gallery gallery-catalog">
           <section class="item">
             <div class="item-image">
               <a href="#"><img src="img/item-1.jpg" width="267" height="267" alt="ice-cream"></a>
@@ -256,18 +256,18 @@
           </section>
         </div>
         <div class="paginator">
-            <a href="#prev">Назад</a>
-            <a href="#1" class="current">1</a>
-            <a href="#2">2</a>
-            <a href="#3">3</a>
-            <a href="#3">4</a>
-            <a href="#3">5</a>
-            <a href="#next">Вперёд</a>
+          <a href="#prev">Назад</a>
+          <a href="#1" class="current">1</a>
+          <a href="#2">2</a>
+          <a href="#3">3</a>
+          <a href="#3">4</a>
+          <a href="#3">5</a>
+          <a href="#next">Вперёд</a>
         </div>
       </div>
     </main>
-    <footer class="main-footer">
-      <div class="container">
+    <footer class="main-footer catalog-footer">
+      <div class="container clearfix">
         <div class="footer-social">
           <a class="social-btn social-btn-tw" href="#">Твиттер</a>
           <a class="social-btn social-btn-inst" href="#">Инстаграм</a>
