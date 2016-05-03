@@ -3,20 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="main-header">
       <div class="container clearfix">
         <div class="logo">
-            <a href="index.html"><img src="img/logo-gllacy.svg" width="154" height="64" alt="glaccy"></a>
+            <a href="index.html"><img src="img/logo-gllacy.svg" width="154" height="64" alt="glaccyshop"></a>
         </div>
         <nav class="main-navigation">
           <ul class="main-menu">
-            <li>
-              <a href="catalog.html" class="active">Каталог</a>
+            <li class="opened">
+              <a href="catalog.html" class="main-menu-unit">Каталог</a>
               <ul class="sub-menu">
-                <li><a href="#">Новинки</a></li>
+                <li><a href="#" class="novelty">Новинки</a></li>
                 <li><a href="catalog.html">Сливочное</a></li>
                 <li><a href="#">Щербеты</a></li>
                 <li><a href="#">Фруктовый лед</a></li>
@@ -24,17 +26,17 @@
               </ul>
             </li>
             <li>
-              <a href="#">Доставка и оплата</a>
+              <a href="#" class="main-menu-unit">Доставка и оплата</a>
             </li>
             <li>
-              <a href="#">О Компании</a>
+              <a href="#" class="main-menu-unit">О Компании</a>
             </li>
           </ul>
         </nav>
         <div class="user-block">
           <ul class="user-menu">
             <li>
-              <a class="search opened" href="#">Поиск</a>
+              <a class="search opened" href="#"></a>
               <div class="search-field">
                 <form action="https://echo.htmlacademy.ru" method="get">
                   <input type="search" name="search" placeholder="Что ищем?">
@@ -77,12 +79,10 @@
               </div>
             </li>
           </ul>
-        </div>
-        <div class="info-block">
-          <span>
-            С 10 до 20, ежедневно<br>
-            <span>8 812 450-25-25</span>
-          </span>
+          <div class="info">
+            <span class="time">С 10 до 20, ежедневно</span><br>
+            <span class="phone">8 812 450-25-25</span>
+          </div>
         </div>
       </div>
     </header>
