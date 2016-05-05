@@ -10,13 +10,30 @@
 }
 
 body {
-  max-width: 1200px;
-  margin-right: auto;
-  margin-left: auto;
   font-size: 16px;
   line-height: 22px;
   color: #ffffff;
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+body > input[type=radio] {
+  display: none;
+}
+
+.index-wrapper {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #849d8f;
+  background-image: url("../img/slider-1.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.catalog-wrapper {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
   background-color: #849d8f;
 }
 
@@ -63,6 +80,8 @@ h1 {
 }
 
 .logo img {
+  width: 154px;
+  height: 64px;
   margin-left: -6px;
   margin-top: -14px;
 }
@@ -147,9 +166,7 @@ h1 {
 }
 
 .user-menu {
-  margin-left: 0;
-  margin-top: 0;
-  margin-right: 0;
+  margin: 0;
   margin-bottom: 15px;
   padding: 0;
   list-style: none;
@@ -244,6 +261,7 @@ h1 {
   font-size: 14px;
   line-height: 16px;
   font-weight: bold;
+/*  font-family: 'Roboto Bold', arial, sans-serif;*/
 }
 
 .phone {
@@ -252,75 +270,104 @@ h1 {
   font-family: 'Roboto Black', arial, sans-serif;
 }
 
-/*****Слайдер*****/
+/* Слайдер
+   ========================================================================== */
 
 .slider {
   position: relative;
+  margin-bottom: 41px;
+  padding-top: 275px;
+  text-align: center;
+  color: #ffffff;
 }
 
-.slider input[type=radio] {
+.slide {
   display: none;
 }
 
-.slider-inner {
-  overflow: hidden;
-}
-.slider-images {
-  width: 300%;
-}
-
-.slides {
-  float: left;
-  width: 1146px;
-  height: 584px;
+.slide-title {
+  width: 700px;
+  margin: 0 auto;
+  margin-bottom: 30.65px;
+  font-size: 60px;
+  line-height: 60.35px;
+  font-family: 'Roboto Black', arial, sans-serif;
 }
 
-.slide1 {
-  background: url("../img/slider-1.png") center no-repeat;
+.slide-btn {
+  display: inline-block;
+  padding-top: 7.5px;
+  padding-bottom: 12px;
+  padding-left: 41px;
+  padding-right: 41px;
+  vertical-align: top;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 32px;
+  line-height: 44px;
+  font-weight: bold;
+  text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
+  background: #f26843;
+  background: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
+  border-radius: 32px;
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
 }
 
-.slide2 {
-  background: url("../img/slider-2.png") center no-repeat;
+.slide-btn:hover {
+  background: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 1);
 }
 
-.slide3 {
-  background: url("../img/slider-3.png") center no-repeat;
+.slide-btn:active {
+  background: linear-gradient(to bottom, #d74632 0%, #e1613e 100%);
+  box-shadow: inset 0 2px 2px rgba(148, 39, 24, 1);
 }
 
 .slider-controls {
   position: absolute;
   left: 0;
-  bottom: 83px;
+  bottom: 21px;
   z-index: 10;
+  font-size: 0;
 }
 
 .slider-controls label {
   display: inline-block;
-  width: 15px;
-  height: 15px;
+  vertical-align: top;
+  width: 17px;
+  height: 17px;
   margin-right: 8px;
   cursor: pointer;
   border-radius: 50%;
-  border: 3px solid #ffffff;
+  border: 2px solid #ffffff;
   background-color: transparent;
 }
 
-#slider-btn-1:checked ~ .slider-controls label[for="slider-btn-1"],
-#slider-btn-2:checked ~ .slider-controls label[for="slider-btn-2"],
-#slider-btn-3:checked ~ .slider-controls label[for="slider-btn-3"] {
+#control-1:checked ~ .index-wrapper .slide-1,
+#control-2:checked ~ .index-wrapper .slide-2,
+#control-3:checked ~ .index-wrapper .slide-3 {
+  display: block;
+}
+
+#control-1:checked ~ .index-wrapper {
+  background-color: #849d8f;
+  background-image: url("../img/slider-1.png");
+}
+
+#control-2:checked ~ .index-wrapper {
+  background-color: #8996a6;
+  background-image: url("../img/slider-2.png");
+}
+
+#control-3:checked ~ .index-wrapper {
+  background-color: #9d8b84;
+  background-image: url("../img/slider-3.png");
+}
+
+#control-1:checked ~ .index-wrapper label[for="control-1"],
+#control-2:checked ~ .index-wrapper label[for="control-2"],
+#control-3:checked ~ .index-wrapper label[for="control-3"] {
   background-color: #ffffff;
-}
-
-#slider-btn-1:checked ~ .slider-inner .slider-images {
-  transform: translate(0);
-}
-
-#slider-btn-2:checked ~ .slider-inner .slider-images {
-  transform: translate(-1146px);
-}
-
-#slider-btn-3:checked ~ .slider-inner .slider-images {
-  transform: translate(-2292px);
 }
 
 .breadcrumbs {
@@ -353,24 +400,85 @@ h1 {
   display: block;
 }
 
+/* Баннер
+   ========================================================================== */
+
 .banners {
   margin-bottom: 40px;
   /*Временно для оформления сетки*/
-  background-color: yellow;
 }
 
 .banner-left {
   float: left;
   width: 560px;
   /*Временно для оформления сетки*/
-  background-color: slategray;
+  background: #981a34 url("../img/banner-1.jpg") no-repeat;
+  background-size: cover;
+  border-radius: 15px;
 }
 
 .banner-right {
   float: right;
   width: 560px;
   /*Временно для оформления сетки*/
-  background-color: slategray;
+  background: #3c2318 url("../img/banner-2.jpg") no-repeat;
+  background-size: cover;
+  border-radius: 15px;
+}
+
+.banner-content {
+  padding-left: 19px;
+  padding-top: 16px;
+  padding-right: 21px;
+  padding-bottom: 24px;
+}
+
+.banner-title {
+  margin: 0;
+  margin-bottom: 16px;
+  font-size: 35px;
+  line-height: 41px;
+  font-weight: bold;
+}
+
+.banners p {
+  margin: 0;
+  margin-bottom: 42px;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: bold;
+}
+
+.wrapper-banner-btn {
+  text-align: right;
+}
+
+.banner-btn {
+  display: inline-block;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 21px;
+  padding-right: 23px;
+  vertical-align: top;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+  background: #f26843;
+  background: linear-gradient(to bottom, #f26843 0%, #ca3824 100%);
+  border-radius: 25px;
+  box-shadow: 0 2px 2px rgba(85, 8, 0, 0.54);
+}
+
+.banner-btn:hover {
+  background: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 1);
+}
+
+.banner-btn:active {
+  background: linear-gradient(to bottom, #d74632 0%, #e1613e 100%);
+  box-shadow: inset 0 2px 2px rgba(148, 39, 24, 1);
 }
 
 .gallery {
