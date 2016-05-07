@@ -22,6 +22,7 @@ body > input[type=radio] {
 
 .index-wrapper {
   max-width: 1200px;
+  min-width: 900px;
   margin-right: auto;
   margin-left: auto;
   background-color: #849d8f;
@@ -32,6 +33,7 @@ body > input[type=radio] {
 
 .catalog-wrapper {
   max-width: 1200px;
+  min-width: 900px;
   margin-right: auto;
   margin-left: auto;
   background-color: #849d8f;
@@ -180,6 +182,7 @@ body > input[type=radio] {
   height: 32px;
   border-radius: 50%;
   background-color: rgba(255,255,255, 0.2);
+  text-indent: -10000px;
 }
 
 .user-menu .login {
@@ -447,11 +450,13 @@ body > input[type=radio] {
   box-shadow: inset 0 2px 2px rgba(148, 39, 24, 1);
 }
 
+
+/* Галерея товаров
+   ========================================================================== */
+
+
 .gallery {
-  margin-bottom: 38px;
   font-size: 0px;
-  /*Временно для оформления сетки*/
-  background-color: darkseagreen;
 }
 
 .gallery-catalog {
@@ -459,22 +464,174 @@ body > input[type=radio] {
 }
 
 .item {
+  position: relative;
   display: inline-block;
   margin-right: 26px;
   width: 267px;
   font-size: 16px;
   vertical-align: top;
+  text-align: center;
+  margin-bottom: 37px;
 }
 
 .item:nth-child(4n) {
   margin-right: 0px;
 }
 
+.item:hover .action {
+  display: block;
+}
+.item:hover .item-image,
+.item:hover .item-title  {
+  z-index: 20;
+}
+
+.item-image {
+  width: 267px;
+  height: 267px;
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+}
+
+.item-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.item-title {
+  margin: 0;
+  margin-top: 14px;
+  font-size: 16px;
+  line-height: 22px;
+  min-height: 44px;
+  font-weight: 500;
+  padding: 0 5px;
+  position: relative;
+}
+
+.item-title a {
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.item .flag {
+  position: absolute;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  width: 61px;
+  height: 61px;
+}
+
+.item .flag-hit {
+  background: url("../img/flag.png") no-repeat;
+  text-indent: -10000px;
+}
+
+.item-price {
+  position: absolute;
+  left: 0;
+  top: 209px;
+  z-index: 30;
+  font-size: 45px;
+  line-height: 45px;
+  min-height: 45px;
+  font-weight: bold;
+}
+.price {
+  padding-right: 30px;
+  background: url("../img/ruble.svg") no-repeat;
+  background-position: 100% 12px;
+}
+.item-price .weight {
+  font-size: 30px;
+  margin-left: -5px;
+}
+
+.item .action {
+  top: -5px;
+  left: -5px;
+  position: absolute;
+  z-index: 10;
+  width: 278px;
+  min-height: 405px;
+  background-color: rgba(254, 254, 254, 0.3);
+  border-radius: 5px;
+  display: none;
+}
+
+.item-btn {
+  display: inline-block;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 16px;
+  padding-right: 16px;
+  vertical-align: top;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+  background: #f26843;
+  background: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
+  border-radius: 20px;
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 1);
+  margin-top: 337px;
+}
+
+
+
+/* Преимущества
+   ========================================================================== */
+
+
+
 .features {
   margin-bottom: 40px;
-  padding: 28px 19px;
-  /*Временно для оформления сетки*/
-  background-color: darkseagreen;
+  padding: 24px 19px;
+  color: #323232;
+  background: #eee2c7 url("../img/features-texture.gif");
+  border-radius: 15px;
+}
+
+.features h2 {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 6px;
+}
+
+.features p {
+  margin: 0;
+  padding-left: 56px;
+  padding-top: 16px;
+}
+
+.features p:nth-of-type(odd) {
+  margin-bottom: 6px;
+}
+
+.feature-left p:first-child {
+  background: url("../img/feature-1.svg") no-repeat;
+  background-position: left 4px;
+}
+
+.feature-left p:last-child {
+  background: url("../img/feature-2.svg") no-repeat;
+  background-position: left 4px;
+}
+
+.feature-right p:first-child {
+  background: url("../img/feature-3.svg") no-repeat;
+  background-position: left 4px;
+}
+
+.feature-right p:last-child {
+  background: url("../img/feature-4.svg") no-repeat;
+  background-position: left 4px;
 }
 
 .feature-left {
@@ -593,7 +750,7 @@ body > input[type=radio] {
 
 }
 
-/* Главный заголовок
+/* Фильтр
    ========================================================================== */
 
 h1 {
@@ -605,11 +762,8 @@ h1 {
   font-weight: bold;
 }
 
-/* Фильтр
-   ========================================================================== */
-
 .filter {
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 .filter form {
   font-size: 0;
