@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="catalog-wrapper">
-      <header class="main-header">
+      <header class="main-header page-header">
         <div class="container clearfix">
           <div class="logo">
               <a href="index.html"><img src="img/logo-gllacy.svg" width="154" height="64" alt="glaccyshop"></a>
@@ -90,15 +90,15 @@
       <main>
         <div class="container">
           <ul class="breadcrumbs">
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="#">Каталог</a></li>
+            <li><a href="index.html">Главная</a><span>&raquo</span></li>
+            <li><a href="#">Каталог</a><span>&raquo</span></li>
             <li class="active">Сливочное</li>
           </ul>
-          <h1>Сливочное мороженое</h1>
           <div class="filter">
+            <h1 class="catalog-page-title">Сливочное мороженое</h1>
             <form action="https://echo.htmlacademy.ru" method="get">
-              <div class="sorting">
-                <label for="sort" class="filter-name">Сортировка:</label>
+              <div class="sort-filter">
+                <label for="sort" class="filter-title sort-title">Сортировка:</label>
                 <select id="sort">
                   <option value="popular" selected>по популярности</option>
                   <option value="cheap">сначала недорогие</option>
@@ -106,10 +106,10 @@
                   <option value="fat-content">по жирности</option>
                 </select>
               </div>
-              <div class="price-range">
-                <div class="price-controls">
-                  Цена: <input class="min-price" type="text" value="100">руб.
-                  - <input class="max-price" type="text" value="500">руб.
+              <div class="range-filter">
+                <div class="filter-title price-controls">
+                  Цена: <input name="min-price" class="min-price" type="text" value="100">руб.
+                  &#8211 <input name="max-price" class="max-price" type="text" value="500">руб.
                 </div>
                 <div class="range-controls">
                   <div class="scale"><div class="bar"></div></div>
@@ -117,41 +117,54 @@
                   <div class="toggle max-toggle"></div>
                 </div>
               </div>
-              <div class="fat-content">
-                <span class="filter-name">Жирность:</span>
-                <label>
-                  <input type="radio" name="fat-content" value="0%">0%
-                </label>
-                <label>
-                  <input type="radio" name="fat-content" value="less-10%" checked>до 10%
-                </label>
-                <label>
-                  <input type="radio" name="fat-content" value="less-30%">до 30%
-                </label>
-                <label>
-                  <input type="radio" name="fat-content" value="higher-30%">выше 30%
-                </label>
+              <div class="fat-filter">
+                <span class="filter-title">Жирность:</span>
+                <div class="filter-content">
+                  <label class="fat-radio">
+                    <input type="radio" name="fat-content" value="0%">
+                    <span class="radio-indicator"></span>0%
+                  </label>
+                  <label class="fat-radio">
+                    <input type="radio" name="fat-content" value="less-10%" checked>
+                    <span class="radio-indicator"></span>до 10%
+                  </label>
+                  <label class="fat-radio">
+                    <input type="radio" name="fat-content" value="less-30%">
+                    <span class="radio-indicator"></span>до 30%
+                  </label>
+                  <label class="fat-radio">
+                    <input type="radio" name="fat-content" value="higher-30%">
+                    <span class="radio-indicator"></span>выше 30%
+                  </label>
+                </div>
               </div>
-              <div class="sweet-content">
-                <span class="filter-name">Наполнители:</span>
-                <label>
-                  <input type="checkbox" name="chocolate" checked>шоколадные
-                </label>
-                <label>
-                  <input type="checkbox" name="sugar" checked>сахарные присыпки
-                </label>
-                <label>
-                  <input type="checkbox" name="fruit">фрукты
-                </label>
-                <label>
-                  <input type="checkbox" name="syrup">сиропы
-                </label>
-                <label>
-                  <input type="checkbox" name="jam">джемы
-                </label>
+              <div class="sweet-filter">
+                <span class="filter-title">Наполнители:</span>
+                <div class="filter-content">
+                  <label class="sweet-checkbox">
+                    <input type="checkbox" name="chocolate" checked>
+                    <span class="checkbox-indicator"></span>шоколадные
+                  </label>
+                  <label class="sweet-checkbox">
+                    <input type="checkbox" name="sugar" checked>
+                    <span class="checkbox-indicator"></span>сахарные присыпки
+                  </label>
+                  <label class="sweet-checkbox">
+                    <input type="checkbox" name="fruit">
+                    <span class="checkbox-indicator"></span>фрукты
+                  </label>
+                  <label class="sweet-checkbox">
+                    <input type="checkbox" name="syrup">
+                    <span class="checkbox-indicator"></span>сиропы
+                  </label>
+                  <label class="sweet-checkbox">
+                    <input type="checkbox" name="jam">
+                    <span class="checkbox-indicator"></span>джемы
+                  </label>
+                </div>
               </div>
               <div class="filter-submit">
-                <input type="submit" name="make-filter" value="Применить">
+                <input class="submit-btn" type="submit" name="make-filter" value="Применить">
               </div>
             </form>
           </div>
