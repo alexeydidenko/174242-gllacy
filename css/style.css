@@ -52,6 +52,35 @@ body > input[type=radio] {
 /*  outline: 1px solid red;*/
 }
 
+.btn {
+  display: inline-block;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+  vertical-align: top;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  border-radius: 25px;
+  background: #f26843;
+  background: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
+}
+
+.btn:hover {
+  background: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 1);
+}
+
+.btn:active {
+  background: linear-gradient(to bottom, #d74632 0%, #e1613e 100%);
+  box-shadow: inset 0 2px 2px rgba(148, 39, 24, 1);
+}
+
+
 /*HEADER*/
 
 .main-header {
@@ -290,32 +319,15 @@ body > input[type=radio] {
 }
 
 .slide-btn {
-  display: inline-block;
   padding-top: 7.5px;
   padding-bottom: 12px;
   padding-left: 41px;
   padding-right: 41px;
-  vertical-align: top;
-  text-decoration: none;
-  color: #ffffff;
   font-size: 32px;
   line-height: 44px;
   font-weight: bold;
   text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
-  background: #f26843;
-  background: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
   border-radius: 32px;
-  box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
-}
-
-.slide-btn:hover {
-  background: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
-  box-shadow: 0 2px 2px rgba(172, 16, 0, 1);
-}
-
-.slide-btn:active {
-  background: linear-gradient(to bottom, #d74632 0%, #e1613e 100%);
-  box-shadow: inset 0 2px 2px rgba(148, 39, 24, 1);
 }
 
 .slider-controls {
@@ -380,7 +392,7 @@ body > input[type=radio] {
 .banner-left {
   float: left;
   width: 560px;
-  /*Временно для оформления сетки*/
+
   background: #981a34 url("../img/banner-1.jpg") no-repeat;
   background-size: cover;
   border-radius: 15px;
@@ -423,31 +435,8 @@ body > input[type=radio] {
 }
 
 .banner-btn {
-  display: inline-block;
-  padding-top: 11px;
-  padding-bottom: 11px;
   padding-left: 21px;
   padding-right: 23px;
-  vertical-align: top;
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-  background: #f26843;
-  background: linear-gradient(to bottom, #f26843 0%, #ca3824 100%);
-  border-radius: 25px;
-  box-shadow: 0 2px 2px rgba(85, 8, 0, 0.54);
-}
-
-.banner-btn:hover {
-  background: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
-  box-shadow: 0 2px 2px rgba(172, 16, 0, 1);
-}
-
-.banner-btn:active {
-  background: linear-gradient(to bottom, #d74632 0%, #e1613e 100%);
-  box-shadow: inset 0 2px 2px rgba(148, 39, 24, 1);
 }
 
 
@@ -484,6 +473,10 @@ body > input[type=radio] {
 .item:hover .item-image,
 .item:hover .item-title  {
   z-index: 20;
+}
+
+.item:hover a {
+  border: none;
 }
 
 .item-image {
@@ -563,21 +556,8 @@ body > input[type=radio] {
 }
 
 .item-btn {
-  display: inline-block;
-  padding-top: 11px;
-  padding-bottom: 11px;
   padding-left: 16px;
   padding-right: 16px;
-  vertical-align: top;
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-  background: #f26843;
-  background: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
-  border-radius: 20px;
-  box-shadow: 0 2px 2px rgba(172, 16, 0, 1);
   margin-top: 337px;
 }
 
@@ -644,25 +624,99 @@ body > input[type=radio] {
   width: 541px;
 }
 
+
+/* Новости и Подписка
+   ========================================================================== */
+
+
 .content {
   margin-bottom: 40px;
-  /*Временно для оформления сетки*/
-  background-color: yellow;
 }
 
-.content-news {
+.news {
   float: left;
   width: 560px;
-  /*Временно для оформления сетки*/
-  background-color: slategray;
+  background: #ffffff url("../img/news.jpg") no-repeat;
+  background-size: cover;
+  border-radius: 15px;
 }
 
-.content-subscription {
+.news-container {
+  padding: 24px 19px;
+}
+
+.news h2 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+  color: #323232;
+  margin-bottom: 4px;
+}
+
+.news a {
+  color: #323232;
+}
+
+.news p {
+  margin: 0;
+  width: 287px;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: bold;
+  white-space: pre-wrap;
+  min-height: 146px;
+}
+
+.subscription {
   float: right;
   width: 560px;
-  /*Временно для оформления сетки*/
-  background-color: slategray;
+  background: #f8f7f4;
+  border-radius: 15px;
+  background: url("../img/subscription-texture.gif");
 }
+
+.subscription-container {
+  margin: 5px;
+  background-color: #f8f7f4;
+  border-radius: 10px;
+  padding-bottom: 33px;
+}
+
+.subscription p {
+  margin: 0;
+  color: #323232;
+  padding: 29px 21px;
+  margin-bottom: 7px;
+}
+
+/*.subscription-form {
+  margin-bottom: 35px;
+}*/
+
+.subscription-form input[type="email"] {
+  width: 338px;
+  padding: 9px 14px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #999999;
+  font-family: "Roboto", Arial, sans-serif;
+  outline: none;
+  border: 1px solid #b2b2b2;
+  background-color: #ffffff;
+  margin-left: 21px;
+  border-radius: 5px;
+}
+
+.subscription-btn {
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: 10px;
+}
+
+/* Переключатель страниц
+   ========================================================================== */
+
 
 .paginator {
   /*Временно для оформления сетки*/
