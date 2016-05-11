@@ -21,7 +21,6 @@ body > input[type=radio] {
 }
 
 .index-wrapper {
-  max-width: 1200px;
   min-width: 900px;
   margin-right: auto;
   margin-left: auto;
@@ -32,7 +31,6 @@ body > input[type=radio] {
 }
 
 .catalog-wrapper {
-  max-width: 1200px;
   min-width: 900px;
   margin-right: auto;
   margin-left: auto;
@@ -89,12 +87,6 @@ body > input[type=radio] {
   padding-top: 23px;
 }
 
-.main-header a {
-  display: block;
-  color: #ffffff;
-  text-decoration: none;
-}
-
 .logo {
   float: left;
   margin-right: 16px;
@@ -119,17 +111,39 @@ body > input[type=radio] {
   font-size: 0;
 }
 
-.main-menu-unit {
-  padding: 7px 14px;
-  border-radius: 16px;
+.main-menu > li {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  font-size: 16px;
 }
 
-.main-menu .main-menu-unit:hover {
+.main-menu li:after {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: 0px;
+  width: 100%;
+  height: 5px;
+}
+
+.main-menu-unit {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 7px 14px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 18px;
+}
+
+.main-menu .main-menu-unit:hover:not(.current) {
   color: #333333;
   background-color: #f7f6f3;
 }
 
-.main-menu .main-menu-unit:active {
+.main-menu .main-menu-unit:active:not(.current) {
   color: #333333;
   background-color: #ededed;
   box-shadow: inset 0 2px 1px 0 rgba(105, 105, 105, 1);
@@ -139,25 +153,17 @@ body > input[type=radio] {
   background-color: #d07058;
 }
 
-.main-menu > li {
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 18px;
-}
-
 .main-menu li:hover .sub-menu {
   display: block;
 }
 
 .sub-menu {
   margin: 0;
-  padding: 0;
+  margin-top: 5px;
+  padding: 5px 0;
   position: absolute;
   left: -7px;
-  width: 143px;
+  min-width: 143px;
   z-index: 10;
   display: none;
   list-style: none;
@@ -166,12 +172,14 @@ body > input[type=radio] {
 }
 
 .sub-menu li {
-  margin-left: 6px;
-  margin-right: 9px;
   margin-bottom: 3px;
 }
 
 .sub-menu a {
+  margin-left: 6px;
+  margin-right: 9px;
+  display: block;
+  text-decoration: none;
   font-size: 14px;
   line-height: 16px;
   padding-left: 15px;
@@ -180,10 +188,23 @@ body > input[type=radio] {
   color: #323232;
 }
 
-.novelty {
-  padding-top: 11px;
+.sub-menu li:hover:not(.current) {
+  background-color: #fbded7;
+}
+
+.sub-menu li:active:not(.current) {
+  background-color: #f6b5a5;
+}
+
+.sub-menu .current {
+  background-color: #d07058;
+}
+
+.sub-menu .novelty {
+  padding-top: 6px;
   padding-bottom: 11px;
-  border-bottom: 1px solid rgba(53,53,53,0.2);
+  border-bottom: 1px solid rgba(53, 53, 53, 0.2);
+  font-weight: bold;
 }
 
 .user-block {
@@ -199,14 +220,30 @@ body > input[type=radio] {
   font-size: 0;
 }
 
+.user-menu li:after {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: 0px;
+  width: 100%;
+  height: 4px;
+}
+
 .user-menu > li {
   display: inline-block;
   vertical-align: top;
+  font-size: 14px;
   position: relative;
+  margin-left: 10px;
+}
+
+.user-menu a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
   font-size: 14px;
   font-weight: 500;
   line-height: 16px;
-  margin-left: 10px;
 }
 
 .user-menu .search {
@@ -266,16 +303,39 @@ body > input[type=radio] {
   background-position: 16px center;
 }
 
+/* Форма поиска*/
+
 .user-menu li:hover .search-field {
   display: block;
 }
 
 .user-menu .search-field {
   position: absolute;
-  left: -130px;
+  left: -309px;
   z-index: 10;
+  margin-top: 4px;
   display: none;
+  background-color: #f8f7f4;
+  border-radius: 6px;
 }
+
+.search-form input[type="search"] {
+  width: 311px;
+  margin: 0;
+  margin: 20px 15px;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "Roboto", Arial, sans-serif;
+  color: #999999;
+  padding: 9px 14px;
+  outline: none;
+  border: 1px solid #d3d3d2;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+
+/* Форма входа */
 
 .user-menu li:hover .entrance {
   display: block;
@@ -283,9 +343,64 @@ body > input[type=radio] {
 
 .user-menu .entrance {
   position: absolute;
-  left: -135px;
+  left: -183px;
+  z-index: 10;
+  margin-top: 4px;
+  background-color: #f8f7f4;
+  border-radius: 6px;
   display: none;
 }
+
+.entrance .login-form {
+  margin: 20px 19px;
+  margin-right: 17px;
+}
+
+.login-form input[type="text"] ,
+.login-form input[type="password"] {
+  width: 211px;
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "Roboto", Arial, sans-serif;
+  color: #999999;
+  padding: 9px 14px;
+  outline: none;
+  border: 1px solid #d3d3d2;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.login-form .login-btn {
+  float: left;
+  padding: 10px 25px;
+  border-radius: 20px;
+}
+
+.login-form .restore-register {
+  float: right;
+  margin-right: 2px;
+}
+
+.restore-register a {
+  display: block;
+  color: #323232;
+  text-decoration: underline;
+  font-size: 13px;
+  line-height: 24px;
+}
+
+.restore-register a:last-child {
+  margin-top: -3px;
+}
+
+.restore-register a:hover,
+.restore-register a:active {
+  color: #e84d37;
+}
+
+/* Корзина товаров*/
 
 .user-menu li:hover .cart-container {
   display: block;
@@ -293,11 +408,82 @@ body > input[type=radio] {
 
 .user-menu .cart-container {
   position: absolute;
-  left: -400px;
-  width: 484px;
+  left: -422px;
+  margin-top: 4px;
   display: none;
-  background-color: darkseagreen;
+  background-color: #f8f7f4;
   z-index: 10;
+  border-radius: 6px;
+}
+
+.cart-table {
+  margin: 20px 15px;
+  margin-bottom: 13px;
+  color: #323232;
+  font-size: 13px;
+  line-height: 16px;
+  border-collapse: collapse;
+}
+
+.cart-table caption {
+  caption-side: bottom;
+  text-align: right;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: bold;
+  margin-right: -2px;
+  margin-top: 3px;
+  padding-top: 15px;
+  border-top: 1px solid #cacac7;
+}
+
+.cart-table td {
+    padding: 0;
+    padding-bottom: 16px;
+    white-space: pre-line;
+}
+
+.cart-table .item-per-kg {
+  color: #999999;
+}
+
+.cart-table img {
+  border-radius: 50%;
+}
+
+.cart-table .column-1 {
+  width: 28px;
+}
+
+.cart-table .column-2 {
+  width: 45px;
+}
+
+.cart-table .column-3 {
+  padding-right: 20px;
+  width: 227px;
+}
+
+.cart-table .column-4 {
+  width: 123px;
+}
+
+.cart-table .column-5 {
+  width: 67px;
+}
+
+.cart-container a {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.cart-btn {
+  margin-right: 15px;
+  margin-bottom: 22px;
+  padding: 10px 14px;
+  float: right;
+  border-radius: 20px;
 }
 
 .info {
@@ -501,14 +687,14 @@ body > input[type=radio] {
 .item-image {
   width: 267px;
   height: 267px;
-  overflow: hidden;
-  border-radius: 50%;
   position: relative;
 }
 
 .item-image img {
   max-width: 100%;
   height: auto;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 .item-title {
@@ -528,11 +714,7 @@ body > input[type=radio] {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.item-title a:hover {
-  color: #ffbc9e;
-  border-bottom: 1px solid #ffbc9e;
-}
-
+.item-title a:hover,
 .item-title a:active {
   color: #ffbc9e;
   border-bottom: 1px solid #ffbc9e;
@@ -688,11 +870,7 @@ body > input[type=radio] {
   color: #323232;
 }
 
-.news a:hover {
-  color: #e84d37;
-  border-color: #e84d37;
-}
-
+.news a:hover,
 .news a:active {
   color: #e84d37;
   border-color: #e84d37;
@@ -751,6 +929,11 @@ body > input[type=radio] {
 
 /* Карта
    ========================================================================== */
+
+.map-wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
 
 .map {
   background: #d5dfc3 url("../img/map.jpg") no-repeat;
