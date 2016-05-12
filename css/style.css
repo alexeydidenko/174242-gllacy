@@ -169,6 +169,7 @@ body > input[type=radio] {
   list-style: none;
   background-color: #f8f7f4;
   border-radius: 5px;
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
 }
 
 .sub-menu li {
@@ -317,6 +318,7 @@ body > input[type=radio] {
   display: none;
   background-color: #f8f7f4;
   border-radius: 6px;
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
 }
 
 .search-form input[type="search"] {
@@ -349,6 +351,7 @@ body > input[type=radio] {
   background-color: #f8f7f4;
   border-radius: 6px;
   display: none;
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
 }
 
 .entrance .login-form {
@@ -414,6 +417,7 @@ body > input[type=radio] {
   background-color: #f8f7f4;
   z-index: 10;
   border-radius: 6px;
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
 }
 
 .cart-table {
@@ -453,6 +457,7 @@ body > input[type=radio] {
 
 .cart-table .column-1 {
   width: 28px;
+/*  text-align: top;*/
 }
 
 .cart-table .column-2 {
@@ -476,6 +481,38 @@ body > input[type=radio] {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
+}
+
+.cart-item-delete {
+  width: 11px;
+  height: 11px;
+  margin-bottom: 8px;
+  margin-left: 1px;
+  position: relative;
+  font-size: 0;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.cart-item-delete::before,
+.cart-item-delete::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -1px;
+  width: 14px;
+  height: 1px;
+  background-color: #353535;
+}
+
+.cart-item-delete::before {
+  transform: rotate(45deg);
+}
+
+.cart-item-delete::after {
+  transform: rotate(-45deg);
 }
 
 .cart-btn {
