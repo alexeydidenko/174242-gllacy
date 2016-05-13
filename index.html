@@ -42,7 +42,7 @@
               <li>
                 <a class="search opened" href="#">Поиск</a>
                 <div class="search-field">
-                  <form class="search-form" action="https://echo.htmlacademy.ru" method="get">
+                  <form class="input-form search-form" action="https://echo.htmlacademy.ru" method="get">
                     <input type="search" name="search" placeholder="Что ищем?">
                   </form>
                 </div>
@@ -50,7 +50,7 @@
               <li>
                 <a class="login opened" href="#">Вход</a>
                 <div class="entrance">
-                  <form class="login-form clearfix" action="https://echo.htmlacademy.ru" method="post">
+                  <form class="input-form login-form clearfix" action="https://echo.htmlacademy.ru" method="post">
                     <input type="text" name="login" placeholder="Электронная почта">
                     <input type="password" name="password" placeholder="Пароль"><br>
                     <input class="btn login-btn" type="submit" name="enter" value="Войти">
@@ -65,10 +65,10 @@
                 <a class="cart-empty" href="#">Пусто</a>
               </li>
             </ul>
-            <div class="info">
-              <span class="time">С 10 до 20, ежедневно</span><br>
-              <span class="phone">8 812 450-25-25</span>
-            </div>
+            <ul class="info">
+              <li class="time">С 10 до 20, ежедневно</li>
+              <li class="phone">8 812 450-25-25</li>
+            </ul>
           </div>
         </div>
       </header>
@@ -188,7 +188,7 @@
             <div class="subscription">
               <div class="subscription-container">
                 <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =)</p>
-                <form class="subscription-form" action="https://echhtmlacademy.ru" method="post">
+                <form class="input-form subscription-form" action="https://echhtmlacademy.ru" method="post">
                   <input type="email" name="email" placeholder="Электронная почта">
                   <input class="btn subscription-btn" type="submit" value="Отправить">
                 </form>
@@ -224,14 +224,14 @@
             <a class="social-btn social-btn-vk" href="#">Вконтакте</a>
           </div>
           <div class="footer-information">
-            <div class="about-us about-us-left">
-              <a href="#"><span class="footer-icon"></span>Для поставщиков</a><br>
-              <a href="#">О производстве</a><br>
-            </div>
-            <div class="about-us about-us-right">
-              <a href="#">Наши документы</a><br>
-              <a href="#">Экологические стандарты</a>
-            </div>
+            <ul class="about-us about-us-left">
+              <li><a href="#">Для поставщиков</a></li>
+              <li><a href="#">О производстве</a></li>
+            </ul>
+            <ul class="about-us about-us-right">
+              <li><a href="#">Наши документы</a><li>
+              <li><a href="#">Экологические стандарты</a><li>
+            </ul>
           </div>
           <div class="footer-copyright">
             <a href="#" class="footer-logo">
@@ -241,14 +241,24 @@
           </div>
         </div>
       </footer>
-      <div class="popup">
-        <h2 class="popup-title">Мы обязательно вам ответим!</h2><a href="#close" title="Закрыть"><span class="icon-close"></span></a>
-        <div class="popup-fields">
-          <form action="https://echo.htmlacademy.ru" method="post">
-            <input type="text" name="name" placeholder="Как вас зовут?">
-            <input type="email" name="email" placeholder="Ваша почта для ответа?">
-            <textarea name="review">Напишите что-нибудь...</textarea>
-            <input type="submit" value="Отправить">
+      <div class="modal-popup">
+        <button class="modal-popup-close" type="button" title="Закрыть">Закрыть</button>
+        <h2 class="modal-popup-title">Мы обязательно вам ответим!</h2>
+        <div class="modal-popup-content">
+          <form class="input-form modal-popup-form" action="https://echo.htmlacademy.ru" method="post">
+            <div class="form-field-wrapper">
+              <input type="text" name="name" id="user-name" placeholder="Как вас зовут?">
+              <label for="user-name">Как вас зовут?</label>
+            </div>
+            <div class="form-field-wrapper">
+              <input type="email" name="email" id="user-email" placeholder="Ваша почта для ответа?">
+              <label for="user-email">Ваша почта для ответа?</label>
+            </div>
+            <div class="form-field-wrapper">
+              <textarea name="review" id="user-review" placeholder="Напишите что-нибудь..."></textarea>
+              <label for="user-review">Напишите что-нибудь...</label>
+            </div>
+            <input type="submit" class="btn modal-popup-btn" value="Отправить">
           </form>
         </div>
       </div>

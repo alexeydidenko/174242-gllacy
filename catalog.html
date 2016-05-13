@@ -82,10 +82,10 @@
                 </div>
               </li>
             </ul>
-            <div class="info">
-              <span class="time">С 10 до 20, ежедневно</span><br>
-              <span class="phone">8 812 450-25-25</span>
-            </div>
+            <ul class="info">
+              <li class="time">С 10 до 20, ежедневно</li>
+              <li class="phone">8 812 450-25-25</li>
+            </ul>
           </div>
         </div>
       </header>
@@ -101,12 +101,14 @@
             <form action="https://echo.htmlacademy.ru" method="get">
               <div class="sort-filter">
                 <label for="sort" class="filter-title sort-title">Сортировка:</label>
-                <select id="sort">
-                  <option value="popular" selected>по популярности</option>
-                  <option value="cheap">сначала недорогие</option>
-                  <option value="expensive">сначала дорогие</option>
-                  <option value="fat-content">по жирности</option>
-                </select>
+                <div class="select-wrapper">
+                  <select id="sort">
+                    <option value="popular" selected>по популярности</option>
+                    <option value="cheap">сначала недорогие</option>
+                    <option value="expensive">сначала дорогие</option>
+                    <option value="fat-content">по жирности</option>
+                  </select>
+                </div>
               </div>
               <div class="range-filter">
                 <div class="filter-title price-controls">
@@ -372,14 +374,14 @@
             <a class="social-btn social-btn-vk" href="#">Вконтакте</a>
           </div>
           <div class="footer-information">
-            <div class="about-us about-us-left">
-              <a href="#">Для поставщиков</a><br>
-              <a href="#">О производстве</a><br>
-            </div>
-            <div class="about-us about-us-right">
-              <a href="#">Наши документы</a><br>
-              <a href="#">Экологические стандарты</a>
-            </div>
+            <ul class="about-us about-us-left">
+              <li><a href="#">Для поставщиков</a></li>
+              <li><a href="#">О производстве</a></li>
+            </ul>
+            <ul class="about-us about-us-right">
+              <li><a href="#">Наши документы</a><li>
+              <li><a href="#">Экологические стандарты</a><li>
+            </ul>
           </div>
           <div class="footer-copyright">
             <a href="#" class="footer-logo">
