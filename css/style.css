@@ -158,6 +158,7 @@ body > input[type=radio] {
 
 .main-menu .current {
   background-color: #d07058;
+  color: #ffffff;
 }
 
 .main-menu li:hover .sub-menu {
@@ -171,7 +172,7 @@ body > input[type=radio] {
   position: absolute;
   left: -7px;
   min-width: 143px;
-  z-index: 10;
+  z-index: 40;
   display: none;
   list-style: none;
   background-color: #f8f7f4;
@@ -206,6 +207,7 @@ body > input[type=radio] {
 
 .sub-menu .current {
   background-color: #d07058;
+  color: #ffffff;
 }
 
 .sub-menu .novelty {
@@ -319,7 +321,7 @@ body > input[type=radio] {
 .user-menu .search-field {
   position: absolute;
   left: -309px;
-  z-index: 10;
+  z-index: 40;
   margin-top: 4px;
   display: none;
   background-color: #f8f7f4;
@@ -352,7 +354,7 @@ body > input[type=radio] {
 .user-menu .entrance {
   position: absolute;
   left: -183px;
-  z-index: 10;
+  z-index: 40;
   margin-top: 4px;
   background-color: #f8f7f4;
   border-radius: 6px;
@@ -421,7 +423,7 @@ body > input[type=radio] {
   margin-top: 4px;
   display: none;
   background-color: #f8f7f4;
-  z-index: 10;
+  z-index: 40;
   border-radius: 6px;
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
 }
@@ -1183,6 +1185,7 @@ body > input[type=radio] {
   color: #323232;
   background-color: #f8f7f4;
   border-radius: 9px;
+  z-index: 50;
 }
 
 .modal-popup-close {
@@ -1297,15 +1300,16 @@ body > input[type=radio] {
   line-height: 16px;
 }
 
-.breadcrumbs span {
-  padding: 0 7px;
-}
-
 .breadcrumbs a {
   text-decoration: none;
   color: #ffffff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
 
+.breadcrumbs li:not(:last-child)::after {
+  content: " » ";
+  margin-left: 5px;
+  margin-right: 6px;
 }
 
 .breadcrumbs a:hover {
