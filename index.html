@@ -43,7 +43,10 @@
                 <a class="search opened" href="#">Поиск</a>
                 <div class="search-field">
                   <form class="input-form search-form" action="https://echo.htmlacademy.ru" method="get">
-                    <input type="search" name="search" placeholder="Что ищем?">
+                    <div class="input-wrapper search-input-wrapper">
+                      <input type="search" name="search" id="search" placeholder="Что ищем?">
+                      <label for="search"></label>
+                    </div>
                   </form>
                 </div>
               </li>
@@ -51,8 +54,14 @@
                 <a class="login opened" href="#">Вход</a>
                 <div class="entrance">
                   <form class="input-form login-form clearfix" action="https://echo.htmlacademy.ru" method="post">
-                    <input type="text" name="login" placeholder="Электронная почта">
-                    <input type="password" name="password" placeholder="Пароль"><br>
+                    <div class="input-wrapper entrance-input-wrapper">
+                      <input type="email" name="login-email" id="login-email" placeholder="Электронная почта">
+                      <label for="login-email"></label>
+                    </div>
+                    <div class="input-wrapper entrance-input-wrapper">
+                      <input type="password" name="password" id="password" placeholder="Пароль">
+                      <label for="password"></label>
+                    </div>
                     <input class="btn login-btn" type="submit" name="enter" value="Войти">
                     <div class="restore-register">
                       <a href="#">Забыли пароль?</a>
@@ -201,31 +210,35 @@
               <div class="subscription-container">
                 <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =)</p>
                 <form class="input-form subscription-form" action="https://echhtmlacademy.ru" method="post">
-                  <input type="email" name="email" placeholder="Электронная почта">
-                  <input class="btn subscription-btn" type="submit" value="Отправить">
+                  <div class="input-wrapper subscription-input-wrapper">
+                    <input type="email" name="subscription-email" id="subscription-email" placeholder="Электронная почта">
+                    <label for="subscription-email"></label>
+                  </div>
+                  <div class="subscription-btn-wrapper">
+                     <input class="btn subscription-btn" type="submit" value="Отправить">
+                  </div>
                 </form>
               </div>
             </div>
           </div>
         </div>
       </main>
-      <div class="map-wrapper">
-        <div class="map">
-          <div class="container clearfix">
-            <div class="address">
-              <p class="address-info">
-                <span>Адрес главного офиса и<br>офлайн магазина:</span><br>
-                <span class="important-info">ул. Большая Конюшенная 19/8, Санкт-Петербург</span>
-              </p>
-              <p class="phone-info">
-               Для заказов по телефону:<br>
-               <span class="important-info">8 812 450-25-25</span><br>
-               (с 10 до 20 ежедневно)
-              </p>
-              <a class="btn address-btn" href="#win1">Форма обратной связи</a>
-            </div>
+      <div class="map clearfix">
+        <div class="container">
+          <div class="address">
+            <p class="address-info">
+              <span>Адрес главного офиса и<br>офлайн магазина:</span><br>
+              <span class="important-info">ул. Большая Конюшенная 19/8, Санкт-Петербург</span>
+            </p>
+            <p class="phone-info">
+             Для заказов по телефону:<br>
+             <span class="important-info">8 812 450-25-25</span><br>
+             (с 10 до 20 ежедневно)
+            </p>
+            <a class="btn feedback-btn" href="#">Форма обратной связи</a>
           </div>
         </div>
+        <div id="yandex-map"></div>
       </div>
       <footer class="main-footer">
         <div class="container clearfix">
@@ -253,29 +266,31 @@
           </div>
         </div>
       </footer>
-      <a href="#x" class="overlay" id="win1"></a>
       <div class="modal-popup">
         <button class="modal-popup-close" type="button" title="Закрыть">Закрыть</button>
         <h2 class="modal-popup-title">Мы обязательно вам ответим!</h2>
         <div class="modal-popup-content">
           <form class="input-form modal-popup-form" action="https://echo.htmlacademy.ru" method="post">
-            <div class="form-field-wrapper">
-              <input type="text" name="name" id="user-name" placeholder="Как вас зовут?">
-              <label for="user-name">Как вас зовут?</label>
+            <div class="input-wrapper">
+              <input type="text" name="username" id="user-name" placeholder="Как вас зовут?">
+              <label for="user-name"></label>
             </div>
-            <div class="form-field-wrapper">
+            <div class="input-wrapper">
               <input type="email" name="email" id="user-email" placeholder="Ваша почта для ответа?">
-              <label for="user-email">Ваша почта для ответа?</label>
+              <label for="user-email"></label>
             </div>
-            <div class="form-field-wrapper">
+            <div class="input-wrapper">
               <textarea name="review" id="user-review" placeholder="Напишите что-нибудь..."></textarea>
-              <label for="user-review">Напишите что-нибудь...</label>
+              <label for="user-review"></label>
             </div>
             <input type="submit" class="btn modal-popup-btn" value="Отправить">
           </form>
         </div>
       </div>
+      <div class="overlay"></div>
     </div>
+    <script src="js/modal-popup.js"></script>
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=60YBtov5UoLqR0syvCeJQANAt14aOtH_&width=100%&height=429&id=yandex-map&sourceType=constructor&scroll=true"></script>
   </body>
 </html>
 
