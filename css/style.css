@@ -1,15 +1,16 @@
 @font-face {
-    font-family: 'robotoblack';
-    src: url('fonts/roboto-black-webfont.eot');
-    src: url('fonts/roboto-black-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/roboto-black-webfont.woff2') format('woff2'),
-         url('fonts/roboto-black-webfont.woff') format('woff'),
-         url('fonts/roboto-black-webfont.ttf') format('truetype');
+    font-family: "robotoblack";
+    src: url("fonts/roboto-black-webfont.eot");
+    src: url("fonts/roboto-black-webfont.eot?#iefix") format("embedded-opentype"),
+         url("fonts/roboto-black-webfont.woff2") format("woff2"),
+         url("fonts/roboto-black-webfont.woff") format("woff"),
+         url("fonts/roboto-black-webfont.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 body {
+  min-width: 1200px;
   font-size: 16px;
   line-height: 22px;
   font-family: "Roboto", Arial, sans-serif;
@@ -21,7 +22,6 @@ body > input[type=radio] {
 }
 
 .index-wrapper {
-  min-width: 900px;
   margin-right: auto;
   margin-left: auto;
   background-color: #849d8f;
@@ -46,7 +46,6 @@ body > input[type=radio] {
 }
 
 .catalog-wrapper {
-  min-width: 900px;
   margin-right: auto;
   margin-left: auto;
   background-color: #849d8f;
@@ -119,6 +118,14 @@ img {
   border: 2px solid rgba(46, 136, 228, 0.52);
 }
 
+.input-wrapper input:-ms-input-placeholder {
+  color: #999999;
+}
+
+.input-wrapper textarea:-ms-input-placeholder {
+  color: #999999;
+}
+
 /* Заголовок
    ========================================================================== */
 
@@ -128,8 +135,8 @@ img {
 }
 
 .logo {
-  max-width: 154px;
-  margin-right: 16px;
+  width: 154px;
+  margin-right: 10px;
   float: left;
 }
 
@@ -141,7 +148,7 @@ img {
 }
 
 .main-navigation {
-  max-width: 382px;
+  width: 382px;
   float: left;
 }
 
@@ -176,15 +183,16 @@ img {
   line-height: 18px;
   color: #ffffff;
   border-radius: 16px;
+  vertical-align: top;
   text-decoration: none;
 }
 
-.main-menu .main-menu-unit:hover:not(.current) {
+.main-menu-unit:hover:not(.current) {
   color: #333333;
   background-color: #f7f6f3;
 }
 
-.main-menu .main-menu-unit:active:not(.current) {
+.main-menu-unit:active:not(.current) {
   color: #333333;
   background-color: #ededed;
   box-shadow: inset 0 2px 1px 0 rgba(105, 105, 105, 1);
@@ -253,7 +261,7 @@ img {
 
 .user-block {
   float: right;
-  max-width: 275px;
+  width: 273px;
 }
 
 .user-menu {
@@ -293,15 +301,14 @@ img {
 .user-menu .search {
   width: 32px;
   height: 32px;
+  font-size: 0;
   background: rgba(255, 255, 255, 0.2) url("../img/loupe.svg") no-repeat;
   background-position: center;
   border-radius: 50%;
-  text-indent: -10000px;
 }
 
 .user-menu .search:hover {
-  background: #f8f7f4 url("../img/loupe-hover.svg") no-repeat;
-  background-position: center;
+  background: #f8f7f4 url("../img/loupe-hover.svg") no-repeat center;
 }
 
 .user-menu .login {
@@ -309,15 +316,13 @@ img {
   padding-top: 8px;
   padding-right: 16px;
   padding-bottom: 8px;
-  background: rgba(255, 255, 255, 0.2) url("../img/entrance.svg") no-repeat;
-  background-position: 16px center;
+  background: rgba(255, 255, 255, 0.2) url("../img/entrance.svg") no-repeat 16px 6px;
   border-radius: 16px;
 }
 
 .user-menu .login:hover {
   color: #323232;
-  background: #f8f7f4 url("../img/entrance-hover.svg") no-repeat;
-  background-position: 16px center;
+  background: #f8f7f4 url("../img/entrance-hover.svg") no-repeat 16px 6px;
 }
 
 .user-menu .cart-empty {
@@ -325,15 +330,13 @@ img {
   padding-top: 8px;
   padding-right: 34px;
   padding-bottom: 8px;
-  background: rgba(255, 255, 255, 0.2) url("../img/cart-empty.svg") no-repeat;
-  background-position: 16px center;
+  background: rgba(255, 255, 255, 0.2) url("../img/cart-empty.svg") no-repeat 16px 6px;
   border-radius: 16px;
 }
 
 .user-menu .cart-empty:hover {
   color: #323232;
-  background: #f8f7f4 url("../img/cart-empty-hover.svg") no-repeat;
-  background-position: 16px center;
+  background: #f8f7f4 url("../img/cart-empty-hover.svg") no-repeat 16px 6px;
 }
 
 .user-menu .cart-full {
@@ -342,8 +345,7 @@ img {
   padding-right: 16px;
   padding-bottom: 8px;
   color: #323232;
-  background: #f7f6f3 url("../img/cart-full.svg") no-repeat;
-  background-position: 16px center;
+  background: #f7f6f3 url("../img/cart-full.svg") no-repeat 16px 6px;
   border-radius: 16px;
 }
 
@@ -355,9 +357,10 @@ img {
 
 .user-menu .search-field {
   position: absolute;
-  left: -309px;
+  left: -308px;
   z-index: 40;
   display: none;
+  width: 342px;
   margin-top: 4px;
   background-color: #f8f7f4;
   border-radius: 6px;
@@ -365,10 +368,11 @@ img {
 }
 
 .search-form input[type="search"] {
-  width: 311px;
+  width: 280px;
+  min-height: 24px;
   margin: 0;
   margin: 20px 15px;
-  padding: 9px 14px;
+  padding: 9px 15px;
   font-size: 14px;
   line-height: 24px;
   font-family: "Roboto", Arial, sans-serif;
@@ -376,9 +380,13 @@ img {
   background-color: #ffffff;
   border: 1px solid #d3d3d2;
   border-radius: 5px;
+  box-sizing: content-box;
   outline: none;
 }
 
+.search-form input:-ms-input-placeholder {
+  color: #999999;
+}
 
 /* Форма входа */
 
@@ -388,9 +396,10 @@ img {
 
 .user-menu .entrance {
   position: absolute;
-  left: -183px;
+  left: -182px;
   z-index: 40;
   display: none;
+  width: 277px;
   margin-top: 4px;
   background-color: #f8f7f4;
   border-radius: 6px;
@@ -406,6 +415,7 @@ img {
 .login-form input[type="email"] ,
 .login-form input[type="password"] {
   width: 211px;
+  min-height: 24px;
   margin: 0;
   margin-bottom: 20px;
   padding: 9px 14px;
@@ -419,9 +429,13 @@ img {
   outline: none;
 }
 
+.login-form input:-ms-input-placeholder {
+  color: #999999;
+}
+
 .login-form .login-btn {
   float: left;
-  max-width: 100px;
+  width: 100px;
   padding: 10px 25px;
   border-radius: 20px;
 }
@@ -590,7 +604,7 @@ img {
 .phone {
   font-size: 22px;
   line-height: 24px;
-  font-family: 'Roboto Black', arial, sans-serif;
+  font-family: "Roboto Black", arial, sans-serif;
 }
 
 /* Слайдер
@@ -614,10 +628,11 @@ img {
   margin-bottom: 30.65px;
   font-size: 60px;
   line-height: 60.35px;
-  font-family: 'Roboto Black', arial, sans-serif;
+  font-family: "Roboto Black", arial, sans-serif;
 }
 
 .slide-btn {
+  max-width: 200px;
   padding-left: 41px;
   padding-top: 7.5px;
   padding-right: 41px;
@@ -684,7 +699,7 @@ img {
    ========================================================================== */
 
 .banners {
-  margin-bottom: 40px;
+  margin-bottom: 34px;
 }
 
 .banner-left {
@@ -744,39 +759,45 @@ img {
   font-size: 0px;
 }
 
+.gallery-index {
+  margin-bottom: 6px;
+}
+
 .gallery-catalog {
-  margin-bottom: 44px;
+  margin-bottom: 47px;
 }
 
 .item {
   position: relative;
   display: inline-block;
   width: 267px;
-  margin-right: 26px;
-  margin-bottom: 37px;
+  margin-right: 21px;
+  margin-bottom: -42px;
+  margin-left: -5px;
+  padding: 5px;
+  padding-bottom: 75px;
   font-size: 16px;
-  vertical-align: top;
+  background-color: transparent;
+  border-radius: 5px;
   text-align: center;
+  vertical-align: top;
 }
 
 .item:nth-child(4n) {
-  margin-right: 0px;
+  margin-right: -5px;
 }
 
 .item:hover .action {
   display: block;
 }
-.item:hover .item-image,
-.item:hover .item-title  {
-  z-index: 20;
+
+.item:hover  {
+  z-index: 10;
+  background-color: rgba(254, 254, 254, 0.3);
 }
 
 .item:hover a {
   border: none;
-}
-
-.item-image {
-  position: relative;
 }
 
 .item-image img {
@@ -787,10 +808,9 @@ img {
 }
 
 .item-title {
-  position: relative;
   min-height: 44px;
   margin: 0;
-  margin-top: 14px;
+  margin-top: 7px;
   padding: 0 5px;
   font-size: 16px;
   line-height: 22px;
@@ -811,9 +831,9 @@ img {
 
 .item .flag {
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 30;
+  top: 6px;
+  left: 5px;
+  z-index: 20;
   width: 61px;
   height: 61px;
 }
@@ -825,9 +845,9 @@ img {
 
 .item-price {
   position: absolute;
-  left: 0;
-  top: 209px;
-  z-index: 30;
+  left: 5;
+  top: 213px;
+  z-index: 20;
   min-height: 45px;
   font-size: 45px;
   line-height: 45px;
@@ -846,18 +866,20 @@ img {
 
 .item .action {
   position: absolute;
-  top: -5px;
-  left: -5px;
+  bottom: 21px;
+  left: 50%;
   z-index: 10;
   display: none;
-  width: 278px;
-  min-height: 405px;
-  background-color: rgba(254, 254, 254, 0.3);
-  border-radius: 5px;
+  width: 200px;
+  min-height: 44px;
+  margin-left: -100px;
 }
 
 .item-btn {
-  margin-top: 337px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 168px;
   padding-left: 16px;
   padding-right: 16px;
 }
@@ -1004,6 +1026,7 @@ img {
 
 .subscription-form input[type="email"] {
   width: 338px;
+  min-height: 24px;
   margin-left: 21px;
   padding: 9px 14px;
   font-size: 16px;
@@ -1016,9 +1039,14 @@ img {
   outline: none;
 }
 
+.subscription-form input:-ms-input-placeholder {
+  color: #999999;
+}
+
 .subscription-btn {
   margin-left: 10px;
   padding: 9px 17px;
+  max-width: 127px;
 }
 
 /* Карта
@@ -1067,6 +1095,7 @@ img {
   display: inline-block;
   padding-left: 27px;
   padding-right: 27px;
+  vertical-align: top;
 }
 
 /* Подвал
@@ -1074,7 +1103,7 @@ img {
 
 .main-footer {
   padding-top: 36px;
-  padding-bottom: 22px;
+  padding-bottom: 29px;
   color: #ffffff;
 }
 
@@ -1094,14 +1123,14 @@ img {
 }
 
 .catalog-footer {
-  margin-top: 33px;
+  margin-top: 30px;
   box-shadow: 0 -28px 0 -27px rgba(254, 254, 254, 0.3);
 }
 
 .footer-social {
   float: left;
-  max-width: 200px;
-  margin-right: 205px;
+  width: 200px;
+  margin-right: 200px;
 }
 
 .social-btn {
@@ -1163,7 +1192,7 @@ img {
 
 .footer-information {
   float: left;
-  max-width: 350px;
+  width: 350px;
 }
 
 .footer-information a {
@@ -1340,6 +1369,7 @@ img {
 .modal-popup-form input[type="email"],
 .modal-popup-form textarea {
   width: 237px;
+  min-height: 24px;
   margin: 0;
   margin-bottom: 20px;
   padding: 9px 14px;
@@ -1352,12 +1382,22 @@ img {
   outline: none;
 }
 
+
+
 .modal-popup-form textarea {
   width: 398px;
   height: 135px;
   margin-bottom: 18px;
   overflow: auto;
   resize: none;
+}
+
+.modal-popup-form input:-ms-input-placeholder {
+  color: #999999;
+}
+
+.modal-popup-form textarea:-ms-input-placeholder {
+  color: #999999;
 }
 
 .modal-popup-btn {
@@ -1388,9 +1428,9 @@ img {
 
 .breadcrumbs > li {
   display: inline-block;
-  vertical-align: top;
   font-size: 14px;
   line-height: 16px;
+  vertical-align: top;
 }
 
 .breadcrumbs a {
@@ -1428,7 +1468,7 @@ h1 {
 }
 
 .filter {
-  margin-bottom: 24px;
+  margin-bottom: 19px;
 }
 .filter-form {
   font-size: 0;
@@ -1782,45 +1822,65 @@ h1 {
 
 
 .paginator {
+  margin: 0;
+  padding: 0;
   font-size: 0;
   text-align: right;
+  list-style: none;
+}
+
+.paginator li {
+  display: inline-block;
+  margin-right: 2px;
+  border-radius: 50%;
+  vertical-align: top;
+}
+
+
+.paginator li:last-child {
+  margin-right: 0;
 }
 
 .paginator a {
   display: inline-block;
   width: 18px;
   height: 18px;
-  margin-right: 11px;
   font-size: 16px;
   line-height: 18px;
   font-weight: 500;
   color: #ffffff;
+  border: 4px solid transparent;
   border-radius: 50%;
   vertical-align: middle;
   text-align: center;
   text-decoration: none;
+  outline: none;
 }
 
-.paginator a:last-child {
-  margin-right: 0;
-}
 
 .paginator .page:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+/*  background-color: red;*/
+  background: rgba(255, 255, 255, 0.2);
+/*  border: 4px solid rgba(255, 255, 255, 0.2);*/
+/*  -ms-box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.2);
+      box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.2);*/
 }
 
 .paginator .current,
 .paginator .current:hover {
   color: #323232;
   background-color: #ffffff;
-  box-shadow: 0 0 0 4px #ffffff;
+  border: 4px solid #ffffff;
+/*  -ms-box-shadow: 0px 0px 0px 4px #ffffff;
+      box-shadow: 0px 0px 0px 4px #ffffff;*/
 }
 
 .paginator .page:active {
   color: #323232;
   background-color: #ffffff;
-  box-shadow: 0 0 0 4px #ffffff;
+  border: 4px solid #ffffff;
+/*  -ms-box-shadow: 0px 0px 0px 4px #ffffff;
+      box-shadow: 0px 0px 0px 4px #ffffff;*/
 }
 
 .paginator .disabled {
@@ -1843,6 +1903,7 @@ h1 {
   border: 2px solid #ffffff;
   border-top-style: none;
   border-right-style: none;
+  vertical-align: top;
 }
 
 .paginator .prev::before {
@@ -1855,7 +1916,7 @@ h1 {
 
 .paginator .next::before {
   top: 4px;
-  left: 4px;
+  left: 9px;
   -webkit-transform: rotate(225deg);
       -ms-transform: rotate(225deg);
           transform: rotate(225deg);
